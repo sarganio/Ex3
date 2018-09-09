@@ -6,7 +6,7 @@ class Item
 private:
 	string _name;
 	string _serialNumber;
-	int _count = 1; //can never be less than 1!
+	int _count; //can never be less than 1!
 	double _unitPrice; //always bigger than 0!
 public:
 	Item();
@@ -20,10 +20,11 @@ public:
 	void setSerialNumber(const string& newSerialNumbere);
 	void setCount(const int newCount);
 	void setUnitPrice(const double newUnitPrice);
-	double totalPrice(); //returns _count*_unitPrice
-	bool operator<(Item& other); //compares the _serialNumber of those items.
-	bool operator>(Item& other); //compares the _serialNumber of those items.
-	bool operator==(Item& other); //compares the _serialNumber of those items.
+
+	double totalPrice()const; //returns _count*_unitPrice
+	bool operator<(Item& other)const; //compares the _serialNumber of those items.
+	bool operator>(Item& other)const; //compares the _serialNumber of those items.
+	bool operator==(Item& other)const; //compares the _serialNumber of those items.
 	~Item();
 
 };
