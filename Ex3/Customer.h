@@ -21,7 +21,7 @@ public:
 
 double totalSum()const; //returns the total sum for payment
 	void addItem(Item newItem); //add item to the set
-//	void removeItem(Item oldItem); //remove item from the set
+	void removeItem(Item oldItem); //remove item from the set
 	~Customer();
 };
 
