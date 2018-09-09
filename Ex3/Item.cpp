@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "Item.h"
-#define DEFAULTCOUNT 1
-#define DEFAULTUNITPRICE 1
+#define DEFAULTCOUNT -1
+#define DEFAULTUNITPRICE -1
 
 
 Item::Item() :_name(""), _serialNumber(""), _count(DEFAULTCOUNT), _unitPrice(DEFAULTUNITPRICE) {}
@@ -15,7 +15,7 @@ string Item::getSerialNumber()const {
 int Item::getCount() const {
 	return this->_count;
 }
-double Item::getUnitPrice() {
+double Item::getUnitPrice()const {
 	return this->_unitPrice;
 }
 //setters

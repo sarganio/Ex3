@@ -14,7 +14,7 @@ public:
 	string getName()const;
 	string getSerialNumber()const;
 	int getCount() const;
-	double getUnitPrice();
+	double getUnitPrice()const;
 //setters
 	void setName(const string& newName);
 	void setSerialNumber(const string& newSerialNumbere);
