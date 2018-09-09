@@ -30,9 +30,7 @@ double Customer::totalSum()const {
 void Customer::addItem(Item newItem) {
 	this->_items.insert(newItem);
 }
-void Customer::removeItem(Item oldItem) {
-	this->_items.erase(oldItem);
-}
-
-
+//void Customer::removeItem(Item oldItem) {
+//	this->_items.erase(oldItem);
+//}
 Customer::~Customer() {}

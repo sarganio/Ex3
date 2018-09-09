@@ -34,13 +34,13 @@ void Item::setUnitPrice(const double newUnitPrice) {
 double Item::totalPrice()const {
 	return this->_count * this->_unitPrice;
 }
-bool Item::operator<(Item& other)const {
+bool Item::operator<(const Item& other)const {
 	return this->_serialNumber < other._serialNumber;
 }
-bool Item::operator>(Item& other)const{
+bool Item::operator>(const Item& other)const{
 	return this->_serialNumber > other._serialNumber;
 }
-bool Item::operator==(Item& other)const {
+bool Item::operator==(const Item& other)const {
 	return this->_serialNumber == other._serialNumber;
 }
 Item::~Item() {}

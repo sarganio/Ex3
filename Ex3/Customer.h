@@ -19,9 +19,9 @@ public:
 	void setName(const string& newName);
 	void setItems(const set<Item>& newItems);
 
-	double totalSum()const; //returns the total sum for payment
+double totalSum()const; //returns the total sum for payment
 	void addItem(Item newItem); //add item to the set
-	void removeItem(Item oldItem); //remove item from the set
+//	void removeItem(Item oldItem); //remove item from the set
 	~Customer();
 };
 
