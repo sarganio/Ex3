@@ -24,7 +24,8 @@ void Item::setName(const string& newName) {
 }
 void Item::setSerialNumber(const string& newSerialNumbere) {
 	this->_serialNumber = newSerialNumbere;
-}void Item::setCount(const int newCount) {
+}
+void Item::setCount(const int newCount) {
 	this->_count;
 }
 void Item::setUnitPrice(const double newUnitPrice) {
@@ -43,4 +44,5 @@ bool Item::operator>(const Item& other)const{
 bool Item::operator==(const Item& other)const {
 	return this->_serialNumber == other._serialNumber;
 }
+
 Item::~Item() {}
