@@ -11,7 +11,9 @@ private:
 	string _name;
 	set<Item> _items;
 public:
+//Ctors
 	Customer();
+	Customer(const Customer& other);
 //getters
 	string getName()const;
 	set<Item> getItems()const;
@@ -20,8 +22,9 @@ public:
 	void setItems(const set<Item>& newItems);
 
 double totalSum()const; //returns the total sum for payment
-	void addItem(Item newItem); //add item to the set
-	void removeItem(Item oldItem); //remove item from the set
+	void addItem(Item& newItem); //add item to the set
+	bool removeItem(Item& oldItem); //remove item from the set
+//Dtor
 	~Customer();
 };
 

@@ -1,10 +1,12 @@
 #include "pch.h"
 #include "Item.h"
+#include <iostream>
 #define DEFAULTCOUNT -1
 #define DEFAULTUNITPRICE -1
 
-
+//Ctors
 Item::Item() :_name(""), _serialNumber(""), _count(DEFAULTCOUNT), _unitPrice(DEFAULTUNITPRICE) {}
+Item::Item(const Item& other) : _name(other._name), _serialNumber(other._serialNumber), _count(other._count), _unitPrice(other._unitPrice) {}
 //getters
 string Item::getName()const {
 	return this->_name;
@@ -25,11 +27,22 @@ void Item::setName(const string& newName) {
 void Item::setSerialNumber(const string& newSerialNumbere) {
 	this->_serialNumber = newSerialNumbere;
 }
-void Item::setCount(const int newCount) {
-	this->_count;
+bool Item::setCount(const int newCount) {
+	if (newCount > 0) {
+		this->_count = newCount;
+		return true;
+	}else
+		std::cout << "The quantity must be an integer bigger than 0." << std::endl;
+	return false;
 }
-void Item::setUnitPrice(const double newUnitPrice) {
-	this->_unitPrice = newUnitPrice;
+bool Item::setUnitPrice(const double newUnitPrice) {
+	if (newUnitPrice > 0) {
+		this->_unitPrice = newUnitPrice;
+		return true;
+	}
+	else
+		std::cout << "The price must be bigger than 0." << std::endl;
+	return false;
 }
 
 double Item::totalPrice()const {
@@ -44,5 +57,5 @@ bool Item::operator>(const Item& other)const{
 bool Item::operator==(const Item& other)const {
 	return this->_serialNumber == other._serialNumber;
 }
-
+//Dtor
 Item::~Item() {}
