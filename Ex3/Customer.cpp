@@ -24,7 +24,7 @@ void Customer::setItems(const set<Item>& newItems) {
 double Customer::totalSum()const {
 	double ans = 0;
 	for (iterator it = _items.begin(); it != _items.end(); it++)
-		ans += it->totalPrice();
+		//ans += it->totalPrice();
 	return ans;
 }
 void Customer::addItem(Item newItem) {
