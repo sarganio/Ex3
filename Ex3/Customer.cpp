@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "Customer.h"
-
+#include <iostream>
 typedef set<Item>::iterator iterator;
 //Ctors
 Customer::Customer() :_name("") {
@@ -30,7 +30,7 @@ double Customer::totalSum()const {
 }
 void Customer::addItem(const Item& newItem) {
 	iterator it;
-	it = this->_items.find(newItem);//////////////////////
+	it = this->_items.find(newItem);
 	//check if the item is already in set
 	if (it == this->_items.end())
 		this->_items.insert(newItem);
@@ -42,8 +42,27 @@ void Customer::addItem(const Item& newItem) {
 	}
 }
 bool Customer::removeItem(const Item& oldItem) {
+	iterator it;
+	it = this->_items.find(oldItem);
+	if (it == this->_items.end()) {
+		std::cout << "The item requasted to be removed isn't found in " << this->_name << "'s list of items." << std::endl;
+		return false;
+	}
+	Item modified = *it;
+	int newCount = modified.getCount() - oldItem.getCount();
+
+	if (newCount < 0) {
+		std::cout << "The quantity which asked to be removed is too high." << std::endl;
+		return false;
+	}
+	if(newCount > 0)
+		modified.setCount(newCount);
 	this->_items.erase(oldItem);
-	return false;
+	//if newCount is 0 then there's no need to insert back the item
+	if (newCount = 0) 
+		return true;
+	this->_items.insert(modified);
+
 }
 //Dtor
 Customer::~Customer() {}
