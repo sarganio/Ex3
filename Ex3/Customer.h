@@ -21,9 +21,9 @@ public:
 	void setName(const string& newName);
 	void setItems(const set<Item>& newItems);
 
-double totalSum()const; //returns the total sum for payment
-	void addItem(Item& newItem); //add item to the set
-	bool removeItem(Item& oldItem); //remove item from the set
+	double totalSum()const; //returns the total sum for payment
+	void addItem(const Item& newItem); //add item to the set
+	bool removeItem(const Item& oldItem); //remove item from the set
 //Dtor
 	~Customer();
 };

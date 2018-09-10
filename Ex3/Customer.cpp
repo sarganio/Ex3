@@ -28,17 +28,22 @@ double Customer::totalSum()const {
 		ans += it->totalPrice();
 	return ans;
 }
-void Customer::addItem(Item& newItem) {
+void Customer::addItem(const Item& newItem) {
 	iterator it;
-	it = this->_items.find(newItem);
-	//check if the item is alredy in set
+	it = this->_items.find(newItem);//////////////////////
+	//check if the item is already in set
 	if (it == this->_items.end())
 		this->_items.insert(newItem);
-	else
-		it->setCount(it->getCount() +1);
+	else {//update the quantity of the item
+		Item modified = *it;
+		modified.setCount(it->getCount() + newItem.getCount());
+		this->_items.erase(it);
+		this->_items.insert(modified);
+	}
 }
-bool Customer::removeItem(Item& oldItem) {
+bool Customer::removeItem(const Item& oldItem) {
 	this->_items.erase(oldItem);
+	return false;
 }
 //Dtor
 Customer::~Customer() {}
