@@ -12,7 +12,7 @@ Customer::Customer(const Customer& other) : _name(other._name), _items(other._it
 string Customer::getName()const {
 	return this->_name;
 }
-set<Item> Customer::getItems()const {
+set<Item> const& Customer::getItems()const {
 	return this->_items;
 }
 //setters
@@ -50,7 +50,7 @@ bool Customer::removeItem(const Item& oldItem) {
 		return false;
 	}
 	Item modified = *it;
-	int newCount = modified.getCount() - oldItem.getCount();
+	int newCount = modified.getCount() - 1;//change to:	"int newCount = modified.getCount() - oldItem.getCount()" to generalize for removing any amount 
 
 	if (newCount < 0) {
 		std::cout << "The quantity which asked to be removed is too high." << std::endl;
@@ -60,7 +60,7 @@ bool Customer::removeItem(const Item& oldItem) {
 		modified.setCount(newCount);
 	this->_items.erase(oldItem);
 	//if newCount is 0 then there's no need to insert back the item
-	if (newCount = 0) 
+	if (newCount == 0) 
 		return true;
 	this->_items.insert(modified);
 	return true;

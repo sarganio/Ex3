@@ -9,15 +9,16 @@ class Customer
 {
 private:
 	string _name;
-	set<Item> _items;
+
 public:
 //Ctors
+	set<Item> _items;
 	Customer();
 	Customer(string name, set<Item> items);
 	Customer(const Customer& other);
 //getters
 	string getName()const;
-	set<Item> getItems()const;
+	set<Item>const& getItems()const;
 //setters
 	void setName(const string& newName);
 	void setItems(const set<Item>& newItems);
