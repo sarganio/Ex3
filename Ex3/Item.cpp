@@ -2,12 +2,12 @@
 #include "Item.h"
 #include <iostream>
 #include <exception>
-#define DEFAULTCOUNT -1
-#define DEFAULTUNITPRICE -1
+#define DEFAULT_COUNT -1
+#define DEFAULT_UNIT_PRICE -1
 
 //Ctors
-Item::Item() :_name(""), _serialNumber(""), _count(DEFAULTCOUNT), _unitPrice(DEFAULTUNITPRICE) {}
-Item::Item(string name, string serialNumber, double unitPrice, int count = 1) : _name(name), _serialNumber(serialNumber) {
+Item::Item() :_name(""), _serialNumber(""), _count(DEFAULT_COUNT), _unitPrice(DEFAULT_UNIT_PRICE) {}
+Item::Item(string name, string serialNumber, double unitPrice, int count) : _name(name), _serialNumber(serialNumber) {
 		this->setCount(count);
 		this->setUnitPrice(unitPrice);
 }

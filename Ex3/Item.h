@@ -11,7 +11,7 @@ private:
 public:
 //Ctors
 	Item();
-	Item(string name, string serialNumber, double _unitPrice, int count = 1);
+	Item(string name, string serialNumber, double unitPrice, int count = 1);
 	Item(const Item& other);
 //getters
 	string getName()const;

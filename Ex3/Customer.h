@@ -13,6 +13,7 @@ private:
 public:
 //Ctors
 	Customer();
+	Customer(string name, set<Item> items);
 	Customer(const Customer& other);
 //getters
 	string getName()const;

@@ -6,6 +6,7 @@ typedef set<Item>::iterator iterator;
 Customer::Customer() :_name("") {
 	_items.clear();
 }
+Customer::Customer(string name, set<Item> items) : _name(name), _items(items) {}
 Customer::Customer(const Customer& other) : _name(other._name), _items(other._items) {}
 //getters
 string Customer::getName()const {
@@ -62,6 +63,7 @@ bool Customer::removeItem(const Item& oldItem) {
 	if (newCount = 0) 
 		return true;
 	this->_items.insert(modified);
+	return true;
 
 }
 //Dtor
