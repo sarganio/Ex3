@@ -1,11 +1,16 @@
 #include "pch.h"
 #include "Item.h"
 #include <iostream>
+#include <exception>
 #define DEFAULTCOUNT -1
 #define DEFAULTUNITPRICE -1
 
 //Ctors
 Item::Item() :_name(""), _serialNumber(""), _count(DEFAULTCOUNT), _unitPrice(DEFAULTUNITPRICE) {}
+Item::Item(string name, string serialNumber, double unitPrice, int count = 1) : _name(name), _serialNumber(serialNumber) {
+		this->setCount(count);
+		this->setUnitPrice(unitPrice);
+}
 Item::Item(const Item& other) : _name(other._name), _serialNumber(other._serialNumber), _count(other._count), _unitPrice(other._unitPrice) {}
 //getters
 string Item::getName()const {
