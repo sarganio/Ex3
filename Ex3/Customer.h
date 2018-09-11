@@ -9,10 +9,9 @@ class Customer
 {
 private:
 	string _name;
-
+	set<Item> _items;
 public:
 //Ctors
-	set<Item> _items;
 	Customer();
 	Customer(string name, set<Item> items);
 	Customer(const Customer& other);
