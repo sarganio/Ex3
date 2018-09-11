@@ -67,4 +67,6 @@ bool Customer::removeItem(const Item& oldItem) {
 
 }
 //Dtor
-Customer::~Customer() {}
+Customer::~Customer() {
+	this->_items.clear();
+}
