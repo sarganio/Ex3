@@ -3,7 +3,7 @@
 #include <set>
 
 using std::set;
-using std::set;
+
 
 class Customer
 {
